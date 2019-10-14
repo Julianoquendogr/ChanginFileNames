@@ -1,14 +1,13 @@
 import os
 folder = 'E:\\Users\\JULIAN\\Pictures\\TESORO'
-path = os.path.realpath(folder)
-os.startfile(path)
 Cont = 0
 UpperFormat = ".JPG"
 Contain = ""
 
 print("Ingrese nombre para los archivos")
 NewName = input()
-NewName = NewName.upper()   
+NewName = NewName.upper()
+txtFile = open("No_Cambiados.txt","w+")
 
 with os.scandir(folder) as ListFolder:
     for file in ListFolder:
@@ -16,11 +15,15 @@ with os.scandir(folder) as ListFolder:
             Contain = Contain.upper()
             if UpperFormat in Contain:
                 Cont = Cont + 1
-                os.rename(folder + "\\" + file.name , 
-                        folder + "\\"  + NewName + "_" + str(Cont) + UpperFormat)
+                os.rename(folder + "\\" + file.name,
+                          folder + "\\" + NewName + "_" + str(Cont) + UpperFormat)
             else:
                 print("Formato no valido: " + Contain)
+                txtFile.write(Contain +'\n')
     else:
         pass
         print("Se han cambiado los nombres de la carpeta :" + folder)
-
+    
+path = os.path.realpath(folder)
+os.startfile(path)
+txtFile.close()
