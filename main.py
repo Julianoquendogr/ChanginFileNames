@@ -17,3 +17,5 @@ with os.scandir(folder) as ListFolder:
                   folder + "\\"  + NewName + "_" + str(Cont) + Format)
 
 print("Se han cambiado los nombres de la carpeta :" + folder)
+print("adios")
+
