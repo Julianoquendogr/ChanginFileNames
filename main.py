@@ -4,7 +4,6 @@ path = os.path.realpath(folder)
 os.startfile(path)
 Cont = 0
 UpperFormat = ".JPG"
-LowFormart = ".jpg"
 Contain = ""
 
 print("Ingrese nombre para los archivos")
