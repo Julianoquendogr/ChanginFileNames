@@ -18,4 +18,3 @@ with os.scandir(folder) as ListFolder:
 
 print("Se han cambiado los nombres de la carpeta :" + folder)
 
-
