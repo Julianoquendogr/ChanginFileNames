@@ -1,16 +1,23 @@
 from datetime import datetime
 import os
-folder = 'E:\\Users\\JULIAN\\Pictures\\TESORO'
+folder = 'E:\\Users\\JULIAN\\Pictures\\TESORO\\'
 Cont = 0
 UpperFormat = ".JPG"
 Contain = ""
+FileName = "OtroFormato_"
+CompleteName = os.path.join(folder,FileName)
+
+#creating timestamp to add to the file name in order to not create duplicates files
 time = datetime.now()
 timestamp = str(time.year)+str(time.month)+str(time.day)+str(time.hour)+str(time.minute)+str(time.second)
 
+#creates the file
+txtFile = open(CompleteName + timestamp + ".txt", "w+")
+
 print("Ingrese nombre para los archivos")
+#Convert to upperCase
 NewName = input()
 NewName = NewName.upper()
-txtFile = open("No_Cambiados_" + timestamp + ".TXT", "w+")
 
 with os.scandir(folder) as ListFolder:
     for file in ListFolder:
