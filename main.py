@@ -1,6 +1,11 @@
 from datetime import datetime
+from tkinter.filedialog import askdirectory
 import os
-folder = 'E:\\Users\\JULIAN\\Pictures\\TESORO\\'
+
+#Give option to open any directory and do file changes
+folder = askdirectory()
+folder = folder.replace("/","\\\\")
+
 Cont = 0
 UpperFormat = ".JPG"
 Contain = ""
@@ -32,8 +37,9 @@ with os.scandir(folder) as ListFolder:
                 txtFile.write(Contain + '\n')
     else:
         pass
-        print("Se han cambiado los nombres de la carpeta :" + folder)
+        print("Se han cambiado los nombres de la carpeta : " + folder)
 
 path = os.path.realpath(folder)
 os.startfile(path)
 txtFile.close()
+
