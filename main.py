@@ -49,4 +49,4 @@ with os.scandir(folder) as ListFolder:
 
 path = os.path.realpath(folder)
 os.startfile(path)
-OpenFile(CompleteName + timestamp + ".txt")
+Methods.OpenFile(CompleteName + timestamp + ".txt")

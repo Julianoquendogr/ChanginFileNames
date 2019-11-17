@@ -1,3 +1,4 @@
+import os
 # Methods to be used in main.py
 
 # Method to open the txt file created
