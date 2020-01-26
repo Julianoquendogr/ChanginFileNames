@@ -46,7 +46,9 @@ with os.scandir(folder) as ListFolder:
     else:
         pass
         print("Python has changed files in selected path : " + folder)
-
 path = os.path.realpath(folder)
 os.startfile(path)
 Methods.OpenFile(CompleteName + timestamp + ".txt")
+               
+
+
